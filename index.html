@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Testando o JS 3</title>
-	<script>
-		
-		var quebrada = false;
-
-		function mudaLampada(tipo) {
-
-			if (!quebrada) {
-				document.getElementById("Luz").src="_imagens/" + tipo + ".jpg";
-				if (tipo == "lampada-quebrada") {
-					quebrada = true;
-				}
-			}
-		}
-	</script>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="./output.css">
 </head>
-<body>
-	<h1>Acenda a Lampada</h1>
-	<a href="_imagens/lampada-apagada.jpg">
-		<img scr="_imagens/lampada-apagada.jpg" alt="Teste">
-		
-	<a href="/_imagens/lampada-apagada.jpg">
-		<img scr="/_imagens/lampada-apagada.jpg" alt="Teste2">
-		
-	<a href="../_imagens/lampada-apagada.jpg">
-		<img scr="../_imagens/lampada-apagada.jpg" alt="Teste4">
-		
-	<a href="..\_imagens/lampada-apagada.jpg">
-		<img scr="\_imagens/lampada-apagada.jpg" alt="Teste3">
-	
 
-	<img scr="https://raw.githubusercontent.com/FelipeSFernandes/JS-Lampada/main/_imagens/lampada-acesa.jpg" alt="Teste5">
-			  
-	<!-- d -->
-	<img src="_imagens/lampada-apagada.jpg" id="Luz" onmousemove ="mudaLampada('Lampada-acesa')" onmouseout="mudaLampada('lampada-apagada')" onclick="mudaLampada('lampada-quebrada')" />
+<body class="h-full w-full flex justify-center items-center overflow-hidden">
+	<div class="flex flex-col items-center justify-center">
+		<div>
+			<img class="cursor-pointer" id="lampada" src="./_imagens/lampada-apagada.jpg" alt="">
+		</div>
+		<div class="w-[500px] h-[500px] mx-auto flex justify-center items-start mt-8">
+			<div class="flex items-center justify-center gap-4">
+				<button id="btnLigarLampada"
+					class="bg-green-300 w-32 py-2 rounded hover:bg-green-300/80 cursor-pointer">LIGAR</button>
+				<button id="btnDesligarLampada"
+					class="bg-gray-300 w-32 py-2 rounded hover:bg-gray-300/80 cursor-pointer">DESLIGAR</button>
+			</div>
+		</div>
+	</div>
+	<script>
+		const btnLigarLampada = document.querySelector("#btnLigarLampada");
+		const btnDesligarLampada = document.querySelector("#btnDesligarLampada");
+		const lampada = document.querySelector("#lampada");
+
+		btnLigarLampada.addEventListener("click", function (event) {
+			lampada.src = "./_imagens/lampada-acesa.jpg"
+		})
+
+		btnDesligarLampada.addEventListener("click", function (event) {
+			lampada.src = "./_imagens/lampada-apagada.jpg"
+		})
+
+		lampada.addEventListener("dblclick", function (event) {
+			lampada.src = "./_imagens/lampada-quebrada.jpg"
+		})		
+	</script>
 </body>
+
 </html>
