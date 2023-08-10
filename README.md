@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/FelipeSFernandes/JS-Lampada/main/_imagens/lampada-acesa.jpg" />
+  <img style="width:120px" src="https://raw.githubusercontent.com/FelipeSFernandes/JS-Lampada/main/_imagens/lampada-acesa.jpg" />
 </p>
 
 ```js
